@@ -1,0 +1,16 @@
+.cards
+{
+    height: 300px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    width: 90%;
+    margin: auto;
+}
+
+.CreditCard {
+    grid-column: 1;
+}
+
+.CreditCardInput {
+    grid-column: 2;
+}
