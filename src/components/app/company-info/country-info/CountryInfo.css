@@ -1,0 +1,33 @@
+.country-info {
+    font-size: 20px;
+    width: 60%;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+}
+
+.country-info::before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.country-info::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+}
+
+.show-more-link-container
+{
+    margin-bottom: 10%;
+}

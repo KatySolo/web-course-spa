@@ -1,0 +1,34 @@
+.require {
+    color: black;
+    height: 400px;
+    font-size: 18px;
+    width: 90%;
+    /*margin: auto;*/
+}
+
+.window-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: start;
+    margin-bottom: 25px;
+}
+
+
+.form-button {
+    align-self: end;
+    background: url("../credit-card-payment/credit-card-input/button.png") no-repeat center;
+    width: 30%;
+    height: 50px;
+    background-size: contain;
+    display: flex;
+}
+
+.button-form-label {
+    align-self: center;
+    justify-self: center;
+}
+.clear-form {
+    margin-top: 25px;
+    text-align: left;
+    color: rgb(5, 107,187);
+}

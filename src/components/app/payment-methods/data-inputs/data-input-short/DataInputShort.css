@@ -1,0 +1,150 @@
+.input-form
+{
+    color: black;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 17% 17% 17% 32% 17%;
+    /*height: 300px;*/
+    height: 100%;
+    font-size: 18px;
+    /*width: 100%;*/
+     width: 100%;
+}
+
+.input-form > input,
+.number-input
+{
+    border: transparent;
+    border-bottom: 1px solid lightgrey;
+    height: 20px;
+    font-size: 1em;
+    align-self: start;
+}
+
+.input-form > input:focus,
+.number-input:focus {
+    outline: none;
+}
+
+.bik-input,
+.number-input,
+.from-input {
+    width: 70%;
+}
+
+.from-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.from-input {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.bik-label {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.bik-input {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.number-label {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.number-input-comp {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+}
+
+.number-input,
+.number-sub-label {
+    display: block;
+}
+
+.number-sub-label{
+    padding: 3px;
+    color: gray;
+}
+
+.number-input {
+    height: 20px;
+}
+.nds-label {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.nds {
+    grid-column: 2;
+    grid-row: 4;
+    width: 70%;
+    height: 100%;
+}
+
+.amount-label {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.amount-input {
+    grid-column: 2;
+    grid-row: 5;
+    width: 25%;
+}
+
+.nds-display {
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 40%;
+    display: flex;
+
+}
+.nds-display .nds-value {
+    display: none;
+}
+
+.nds-value {
+    padding: 5px;
+    text-align: end;
+
+}
+
+.nds-labels {
+    height: 50%;
+    display: flex;
+    color: rgb(5, 107,187);
+}
+
+.nds-labels > label {
+    padding: 7px;
+}
+
+.nds-value-radio {
+    display: none;
+}
+
+.nds-value-radio[value='no']:checked ~ .nds .no-nds,
+.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds,
+.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds
+{
+    display: block;
+}
+
+.nds-value-radio[value='no']:checked ~ .nds .no-nds-label,
+.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds-label,
+.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds-label
+{
+    color: black;
+}
+
+.payment-label {
+    width: fit-content;
+    align-self: start;
+}

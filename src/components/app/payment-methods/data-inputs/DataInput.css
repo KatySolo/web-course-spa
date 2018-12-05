@@ -1,0 +1,48 @@
+input
+{
+    border: transparent;
+    border-bottom: 1px solid lightgrey;
+    height: 20px;
+    font-size: 1em;
+    align-self: start;
+}
+
+.data-input-ext {
+    color: black;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 70% 15% 15%;
+    height: 600px;
+    font-size: 18px;
+}
+
+.input-form {
+    grid-row: 1;
+    grid-column: 1/ span 2;
+}
+
+.tel-number-label {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.tel-input-comp {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.tel-sub-label {
+    display: block;
+    padding: 3px;
+    color: blue;
+}
+
+.email-label {
+    grid-row: 3;
+    grid-column: 1;
+}
+.email-input {
+    grid-row: 3;
+    grid-column: 2;
+    width: 70%;
+}

@@ -2,9 +2,9 @@
 {
     height: 300px;
     display: grid;
-    grid-template-columns: 35% 65%;
-    width: 90%;
-    margin: auto;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    /*margin: auto;*/
 }
 
 .CreditCard {
