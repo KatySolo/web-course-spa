@@ -1,0 +1,58 @@
+.navigation
+{
+    color: rgb(5, 107,187);
+    font-size: 20px;
+}
+
+.card-ico,
+.bank-ico {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.payment-methods-panel {
+    width: 50%;
+}
+
+.actions-labels-panel {
+    width: 30%;
+    margin: 10px 0;
+}
+.require-link {
+    margin-left: 5%;
+}
+
+.pay-links
+{
+    display: inline-block;
+    color: rgb(5, 107,187);
+    padding: 5px 10px;
+}
+
+
+.payment-methods-panel > .pay-links:hover{
+    background: lightgrey;
+    color: white;
+}
+
+/*.methods-radio*/
+/*{*/
+    /*display: none;*/
+/*}*/
+
+.methods-radio[value="hide"]:checked ~ .payment-methods-panel
+{
+    display: none;
+}
+
+.methods-radio[value="hide"]:checked ~ .actions-labels-panel .require-link,
+.methods-radio[value="show"]:checked ~ .actions-labels-panel .pay-link
+{
+    color: black;
+}
+
+/*.link {*/
+    /*outline: none;*/
+/*}*/
+

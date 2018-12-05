@@ -5,8 +5,8 @@ class CountryInfo extends Component {
     render() {
         return (
             <div className="country-info-container">
-                <input type="radio" name="visible" id="show" value="show" className="show-checkbox" />
-                <input type="radio" name="visible" id="hide" value="hide" className="show-checkbox" checked/>
+                {/*<input type="radio" name="visible" id="show" value="show" className="show-checkbox" />*/}
+                {/*<input type="radio" name="visible" id="hide" value="hide" className="show-checkbox" checked/>*/}
 
                 <p className="country-info">
                     Испа́ния (исп. и галис. España), официально Короле́вство Испа́ния

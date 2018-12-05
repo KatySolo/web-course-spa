@@ -16,12 +16,12 @@ class DataInputShort extends Component {
                     <sub className="number-sub-label payment-label">Назначение платежа</sub>
                 </div>
                 <span className="nds-label payment-label">За что</span>
-                <input type="radio" name="nds-value-radio" value="no" className="nds-value-radio" id="no-nds"
-                       checked/>
-                <input type="radio" name="nds-value-radio" value="ten-percent" className="nds-value-radio"
-                       id="ten-percent-nds"/>
-                <input type="radio" name="nds-value-radio" value="eighteen-percent"
-                       className="nds-value-radio" id="eighteen-percent-nds"/>
+                {/*<input type="radio" name="nds-value-radio" value="no" className="nds-value-radio" id="no-nds"*/}
+                       {/*checked/>*/}
+                {/*<input type="radio" name="nds-value-radio" value="ten-percent" className="nds-value-radio"*/}
+                       {/*id="ten-percent-nds"/>*/}
+                {/*<input type="radio" name="nds-value-radio" value="eighteen-percent"*/}
+                       {/*className="nds-value-radio" id="eighteen-percent-nds"/>*/}
                 <div className="nds">
                     <div className="nds-display">
                         <span className="no-nds nds-value">без НДС</span>
