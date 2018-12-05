@@ -5,6 +5,9 @@ class CountryInfo extends Component {
     render() {
         return (
             <div className="country-info-container">
+                <input type="radio" name="visible" id="show" value="show" className="show-checkbox" />
+                <input type="radio" name="visible" id="hide" value="hide" className="show-checkbox" checked/>
+
                 <p className="country-info">
                     Испа́ния (исп. и галис. España), официально Короле́вство Испа́ния
                     (исп. и галис. Reino de España МФА [ˈreino ðe esˈpaɲa]) — суверенное государство на юго-западе
@@ -14,8 +17,10 @@ class CountryInfo extends Component {
                     являясь четвёртой по величине страной в Европе (после России, Украины и Франции).
                 </p>
                 <div className="show-more-link-container">
-                    <a href="#" className="show-more-link">Показать все</a>
+                    <label htmlFor="show"><span className="show-more-link">Показать все</span></label>
+                    <label htmlFor="hide"><span className="hide-link">Скрыть</span></label>
                 </div>
+
             </div>
         );
     }

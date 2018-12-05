@@ -1,8 +1,8 @@
 .payments-window {
     color: rgb(5, 107,187);
     font-size: 20px;
-    border: 1px dot-dot-dash black;
-    margin: 0 10%;
+    margin: 50px 10%;
+    height: fit-content;
 }
 
 .card-ico,
@@ -35,5 +35,6 @@
 
 .payments-methods
 {
- margin-top: 20px;
+    margin-top: 20px;
+    height: fit-content;
 }

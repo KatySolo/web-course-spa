@@ -29,11 +29,11 @@ class DataInputShort extends Component {
                         <span className="eighteen-pers-nds nds-value">НДС 18%</span>
                     </div>
                     <div className="nds-labels">
-                        <label form="eighteen-percent-nds"><span
+                        <label htmlFor="eighteen-percent-nds"><span
                             className="eighteen-pers-nds-label">НДС 18%</span></label>
-                        <label form="ten-percent-nds"><span
+                        <label htmlFor="ten-percent-nds"><span
                             className="ten-pers-nds-label">НДС 10%</span></label>
-                        <label form="no-nds"><span className="no-nds-label">Без НДС</span></label>
+                        <label htmlFor="no-nds"><span className="no-nds-label">Без НДС</span></label>
                     </div>
                 </div>
                 <span className="amount-label payment-label">Сколько</span>

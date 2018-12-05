@@ -1,6 +1,8 @@
 .require {
     color: black;
-    height: 400px;
+    /*height: 400px;*/
+    height: fit-content;
+    min-height: 400px;
     font-size: 18px;
     width: 90%;
     /*margin: auto;*/

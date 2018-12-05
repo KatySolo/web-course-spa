@@ -31,3 +31,33 @@
 {
     margin-bottom: 10%;
 }
+
+.show-more-link
+{
+    color: blue;
+    cursor: pointer;
+}
+
+.hide-link
+{
+    display: none;
+    color: blue;
+    cursor: pointer;
+}
+
+.show-checkbox[value="show"]:checked ~ .country-info {
+    max-height: fit-content;
+}
+
+.show-checkbox[value="show"]:checked ~ .show-more-link-container .show-more-link {
+    display: none;
+}
+
+.show-checkbox[value="show"]:checked ~ .show-more-link-container .hide-link {
+    display: block;
+}
+
+.show-checkbox
+{
+    display: none;
+}

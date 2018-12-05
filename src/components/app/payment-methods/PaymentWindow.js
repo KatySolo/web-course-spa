@@ -21,8 +21,8 @@ class PaymentWindow extends Component {
                         <img src={bank} alt="bank" className="bank-ico" />Из своего интернет-банка</div>
                 </div>
                 <div className="payments-methods">
-                    <MyCard/>
-                    {/*<AllBanks/>*/}
+                    {/*<MyCard/>*/}
+                    <AllBanks/>
                     {/*<Require/>*/}
                 </div>
 
