@@ -7,10 +7,140 @@
     /*margin: auto;*/
 }
 
-.CreditCard {
+.card-template {
     grid-column: 1;
 }
 
-.CreditCardInput {
+.data-input-container {
     grid-column: 2;
+}
+
+.my-bank-card {
+    height: 300px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+.card-template {
+    position: relative;
+    grid-column: 1;
+    border: 1px solid gray;
+    border-radius: 15px;
+    height: 80%;
+    width: 85%;
+    box-shadow: 0 8px 20px gray, -10px 8px 25px lightgrey, 10px 8px 25px lightgrey;
+}
+.cards-systems {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 40%;
+    height: 15%;
+}
+.info-input{
+    height: 35px;
+    border: transparent;
+    border-bottom: 1px solid lightgrey;
+    font-size: 20px;
+}
+.card-number-input {
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    width: 78%;
+}
+
+.expire-date-input {
+    position: absolute;
+    left: 5%;
+    top: 65%;
+    width: 20%;
+}
+
+.cvc-input {
+    position: absolute;
+    right: 45%;
+    top: 65%;
+    width: 15%;
+}
+
+/*---*/
+.data-input-container {
+    color: black;
+    width: 100%;
+    height: 300px;
+    font-size: 20px;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 25% 70%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.sum-label{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.sum-input {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.comment-label {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.comment-input {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.email-label-card {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.email-input {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.pay-button {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.input-label {
+    align-self: center;
+    justify-self: left;
+}
+
+.pay-button {
+    align-self: center;
+    justify-self: left;
+    text-align: center;
+    padding: 10px;
+    background: url("./button.png") no-repeat center;
+    background-size: contain;
+}
+
+.data-input-container > input {
+    border: transparent;
+    width: 60%;
+    height: 35px;
+    font-size: 1em;
+    align-self: center;
+}
+
+.data-input-container > .comment-input,
+.data-input-container > .email-input-card {
+    border-bottom: 1px solid lightgrey;
+}
+
+input:focus {
+    outline: none;
 }

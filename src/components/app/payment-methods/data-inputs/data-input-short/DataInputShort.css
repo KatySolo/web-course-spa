@@ -118,21 +118,20 @@
     padding: 7px;
 }
 
-/*.nds-value-radio[value='no']:checked ~ .nds .no-nds,*/
-/*.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds,*/
-/*.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds*/
-/*{*/
-    /*display: block;*/
-/*}*/
-
-/*.nds-value-radio[value='no']:checked ~ .nds .no-nds-label,*/
-/*.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds-label,*/
-/*.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds-label*/
-/*{*/
-    /*color: black;*/
-/*}*/
-
 .payment-label {
     width: fit-content;
     align-self: start;
+}
+
+.form-button {
+    /*align-self: end;*/
+    /*background: url("../credit-card-payment/credit-card-input/button.png") no-repeat center;*/
+    width: 50%;
+    height: 50px;
+    background-size: contain;
+    display: flex;
+}
+
+.button-form-label {
+    align-self: center;
 }

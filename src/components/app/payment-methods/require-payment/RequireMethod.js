@@ -5,13 +5,21 @@ import DataInput from '../data-inputs/DataInput'
 class RequireMethod extends Component {
     constructor() {
         super();
-        this.state = {needToClean: false};
+        this.state = {
+            needToClean: false,
+            data: {}
+        };
+        this.handleData = this.handleData.bind(this);
     }
 
     makeFormDirty = () => {
         this.setState({needToClean: false});
-        // console.log("Dirty", this.state.needToClean);
     };
+
+    handleData = (value) => {
+        this.props.handleData(value);
+    };
+
     render() {
         return (
             <div className="payment require">
@@ -19,11 +27,7 @@ class RequireMethod extends Component {
                     Валерьевна
                     подпишет ее у себя в интернет-банке
                 </div>
-                <DataInput cleanCallback = {this.makeFormDirty} cleanStatus = {this.state.needToClean} />
-                <div className="form-button">
-                    <span className="button-form-label">Создать платеж
-                    </span>
-                </div>
+                <DataInput cleaningCallback = {this.makeFormDirty} cleanStatus = {this.state.needToClean} handleData = {this.handleData}/>
                 <div onClick={() => this.setState({needToClean: true})} className="clear-form">Очистить форму</div>
             </div>
         );

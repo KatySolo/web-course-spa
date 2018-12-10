@@ -16,19 +16,19 @@
     margin-bottom: 15px;
 }
 
-.form-button {
-    align-self: end;
-    background: url("../credit-card-payment/credit-card-input/button.png") no-repeat center;
-    width: 30%;
-    height: 50px;
-    background-size: contain;
-    display: flex;
-}
+/*.form-button {*/
+    /*align-self: end;*/
+    /*background: url("../credit-card-payment/credit-card-input/button.png") no-repeat center;*/
+    /*width: 30%;*/
+    /*height: 50px;*/
+    /*background-size: contain;*/
+    /*display: flex;*/
+/*}*/
 
-.button-form-label {
-    align-self: center;
-    justify-self: center;
-}
+/*.button-form-label {*/
+    /*align-self: center;*/
+    /*justify-self: center;*/
+/*}*/
 .clear-form {
     text-align: left;
     color: rgb(5, 107,187);

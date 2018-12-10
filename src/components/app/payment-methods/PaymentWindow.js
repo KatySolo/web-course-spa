@@ -7,6 +7,11 @@ import Require from './require-payment/RequireMethod'
 import Navigation from './navigation/Navigation'
 
 class PaymentWindow extends Component {
+
+    handleData = (value) => {
+      console.log(value);
+    };
+
     render() {
         return (
             <BrowserRouter>
@@ -14,9 +19,9 @@ class PaymentWindow extends Component {
                     <Navigation/>
                     <div className="payments-methods">
                         <Switch>
-                            <Route path="/card" component={MyCard}/>
-                            <Route path="/all-banks" component={AllBanks}/>
-                            <Route path="/require" component={Require}/>
+                            <Route path="/card" render={() => <MyCard handleData = {this.handleData} />}/>
+                            <Route path="/all-banks" render={() => <AllBanks handleData = {this.handleData} />}/>
+                            <Route path="/require" render={() => <Require handleData = {this.handleData} />}/>
                         </Switch>
                     </div>
                 </div>

@@ -5,24 +5,27 @@ import DataInputShort from '../data-inputs/data-input-short/DataInputShort'
 class AllBanksMethod extends Component {
     constructor() {
         super();
-        this.state = {needToClean: false};
+        this.state = {
+            needToClean: false,
+            data: {}
+        };
     }
 
-    makeFormDirty = () => {
+    confirmClean = () => {
         this.setState({needToClean: false});
     };
+
+    collectData = (value) => {
+        this.props.handleData(value);
+    };
+
 
     render() {
         return (
             <div className="payment all-bank-card">
                 <div className="window-title"> Сформируйте платежку и загрузите её в свой банк для подписи</div>
-                <DataInputShort cleanStatus = {this.state.needToClean} cleanCallback = {this.makeFormDirty}/>
-                <div className="form-button">
-                    <span className="button-form-label">Получить фаил для интернет-банка
-                    </span>
-                </div>
-                <div onClick={() =>
-                {this.setState({needToClean: true}); console.log('clicked')}} className="clear-form">Очистить форму</div>
+                <DataInputShort handleData = {this.collectData} cleanStatus={this.state.needToClean} cleaningCallback = {this.confirmClean}/>
+                <div className="clear-form" onClick={() => this.setState({needToClean: true})}>Очистить форму </div>
             </div>
         );
     }
