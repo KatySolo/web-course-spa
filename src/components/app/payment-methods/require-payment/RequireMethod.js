@@ -3,6 +3,15 @@ import './RequireMethod.css'
 import DataInput from '../data-inputs/DataInput'
 
 class RequireMethod extends Component {
+    constructor() {
+        super();
+        this.state = {needToClean: false};
+    }
+
+    makeFormDirty = () => {
+        this.setState({needToClean: false});
+        // console.log("Dirty", this.state.needToClean);
+    };
     render() {
         return (
             <div className="payment require">
@@ -10,12 +19,12 @@ class RequireMethod extends Component {
                     Валерьевна
                     подпишет ее у себя в интернет-банке
                 </div>
-                <DataInput/>
+                <DataInput cleanCallback = {this.makeFormDirty} cleanStatus = {this.state.needToClean} />
                 <div className="form-button">
                     <span className="button-form-label">Создать платеж
                     </span>
                 </div>
-                <div className="clear-form">Очистить форму</div>
+                <div onClick={() => this.setState({needToClean: true})} className="clear-form">Очистить форму</div>
             </div>
         );
     }

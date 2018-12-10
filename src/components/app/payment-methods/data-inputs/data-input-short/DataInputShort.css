@@ -3,12 +3,10 @@
     color: black;
     display: grid;
     grid-template-columns: 25% 75%;
-    grid-template-rows: 17% 17% 17% 32% 17%;
-    /*height: 300px;*/
+    grid-template-rows: 17% 17% 17% 26% 23%;
     height: 100%;
     min-height: 300px;
     font-size: 18px;
-    /*width: 100%;*/
     width: 100%;
 }
 
@@ -103,17 +101,10 @@
 .nds-display {
     border-bottom: 1px solid black;
     width: 100%;
-    height: 40%;
+    /*height: 40%;*/
+    height: fit-content;
+    padding: 7px;
     display: flex;
-
-}
-.nds-display .nds-value {
-    display: none;
-}
-
-.nds-value {
-    padding: 5px;
-    text-align: end;
 
 }
 
@@ -127,23 +118,19 @@
     padding: 7px;
 }
 
-.nds-value-radio {
-    display: none;
-}
+/*.nds-value-radio[value='no']:checked ~ .nds .no-nds,*/
+/*.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds,*/
+/*.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds*/
+/*{*/
+    /*display: block;*/
+/*}*/
 
-.nds-value-radio[value='no']:checked ~ .nds .no-nds,
-.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds,
-.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds
-{
-    display: block;
-}
-
-.nds-value-radio[value='no']:checked ~ .nds .no-nds-label,
-.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds-label,
-.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds-label
-{
-    color: black;
-}
+/*.nds-value-radio[value='no']:checked ~ .nds .no-nds-label,*/
+/*.nds-value-radio[value='ten-percent']:checked ~ .nds .ten-pers-nds-label,*/
+/*.nds-value-radio[value='eighteen-percent']:checked ~ .nds .eighteen-pers-nds-label*/
+/*{*/
+    /*color: black;*/
+/*}*/
 
 .payment-label {
     width: fit-content;

@@ -35,24 +35,3 @@
     background: lightgrey;
     color: white;
 }
-
-/*.methods-radio*/
-/*{*/
-    /*display: none;*/
-/*}*/
-
-.methods-radio[value="hide"]:checked ~ .payment-methods-panel
-{
-    display: none;
-}
-
-.methods-radio[value="hide"]:checked ~ .actions-labels-panel .require-link,
-.methods-radio[value="show"]:checked ~ .actions-labels-panel .pay-link
-{
-    color: black;
-}
-
-/*.link {*/
-    /*outline: none;*/
-/*}*/
-

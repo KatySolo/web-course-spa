@@ -13,7 +13,7 @@ class Navigation extends Component
     }
 
     handleRadio(e) {
-        console.log(this);
+        console.log(e.currentTarget.value);
         this.setState({
             checked: e.currentTarget.value
 
@@ -22,21 +22,15 @@ class Navigation extends Component
     render() {
         return(
             <div className="navigation">
-                <input type="radio" name="methods" value="show" id="show" className="methods-radio"
-                       checked={this.state.checked === "show"} onChange={this.handleRadio}/>
-                <input type="radio" name="methods" value="hide" id="hide" className="methods-radio"
-                       checked={this.state.checked === "hide"} onChange={this.handleRadio}/>
                 <div className="actions-labels-panel">
-                    {/*label ignored */}
-                    {/*make gray background stay*/}
-                    <label htmlFor="show">
+                    <label onClick={() => {this.setState({checked: 'show'}); console.log(this.state)}}>
                         <NavLink to="/card" className="pay-link link">Заплатить</NavLink>
                     </label>
-                    <label htmlFor="hide">
+                    <label onClick={() => this.setState({checked: 'hide'})}>
                         <NavLink to="/require" className="require-link link">Запросить платеж</NavLink>
                     </label>
                 </div>
-                <div className="payment-methods-panel">
+                {this.state.checked === 'show' ? <div className="payment-methods-panel">
                     <NavLink to="/card" className="all-cards-link pay-links link">
                         <img src={card} alt="card" className="card-ico"/>С карты любого банка
                     </NavLink>
@@ -44,6 +38,7 @@ class Navigation extends Component
                         <img src={bank} alt="bank" className="bank-ico"/>Из своего интернет-банка
                     </NavLink>
                 </div>
+                : ""}
             </div>
         );
     }

@@ -11,7 +11,7 @@ input
     color: black;
     display: grid;
     grid-template-columns: 25% 75%;
-    grid-template-rows: 70% 15% 15%;
+    grid-template-rows: 68% 15% 17%;
     height: 600px;
     font-size: 18px;
 }
