@@ -23,7 +23,7 @@ class Navigation extends Component
         return(
             <div className="navigation">
                 <div className="actions-labels-panel">
-                    <label onClick={() => {this.setState({checked: 'show'}); console.log(this.state)}}>
+                    <label onClick={() => this.setState({checked: 'show'})}>
                         <NavLink to="/card" className="pay-link link">Заплатить</NavLink>
                     </label>
                     <label onClick={() => this.setState({checked: 'hide'})}>
