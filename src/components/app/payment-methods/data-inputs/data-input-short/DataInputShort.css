@@ -124,14 +124,16 @@
 }
 
 .form-button {
-    /*align-self: end;*/
-    /*background: url("../credit-card-payment/credit-card-input/button.png") no-repeat center;*/
-    width: 50%;
-    height: 50px;
+    align-self: end;
+    /*background: url("./credit-card-payment/credit-card-input/button.png") no-repeat center;*/
+    width: fit-content;
+    height: fit-content;
     background-size: contain;
     display: flex;
 }
 
 .button-form-label {
     align-self: center;
+    width: 200px;
+    height: 50px;
 }

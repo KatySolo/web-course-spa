@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './CreditCardMethod.css'
 import card_system from "./card_systems.png";
+import InputMask from 'react-input-mask'
 
 class CreditCardMethod extends Component {
 
@@ -45,14 +46,14 @@ class CreditCardMethod extends Component {
     checkCardNumber(e) {
         const num = e.target.value;
 
-        (num.match(/^[0-9]{16}$/)) ?
+        (num.match(/^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/)) ?
             this.setState({cardNumberValid: true},() => this.validateForm()) :
             this.setState({cardNumberValid: false},() => this.validateForm());
     }
 
     checkExpireDate(e) {
         const date = e.target.value;
-        (date.match(/^(0[1-9]|1[0-2])\/?([0-9]{4}|1[8-9]{1}|[2-9]{1}[0-9]{1})$/)) ?
+        (date.match(/^(0[1-9]|1[0-2])\/?|1[8-9]{1}|[2-9]{1}[0-9]{1}$/)) ?
             this.setState({expireDateValid: true},() => this.validateForm()) :
             this.setState({expireDateValid: false},() => this.validateForm());
     }
@@ -95,13 +96,13 @@ class CreditCardMethod extends Component {
             <div className="cards">
                     <div className="card-template">
                         <img src={ card_system } alt="cards-systems" className="cards-systems" />
-                        <input type="text" placeholder="Номер карты" maxLength="16"
+                        <InputMask type="text" placeholder="Номер карты" mask="9999 9999 9999 9999" maskChar=" "
                                className="info-input card-number-input"
                                onChange={(e) => {
                                    this.setState({cardNumber: e.target.value});
                                    this.checkCardNumber(e);
                                }}/>
-                        <input type="text" placeholder="ММ/ГГ" maxLength="5"
+                        <InputMask type="text" placeholder="ММ/ГГ" mask="99/99" maskChar=" "
                                className="info-input expire-date-input"
                                onChange={(e) => {
                                    this.setState({expireDate: e.target.value});

@@ -124,7 +124,7 @@ input:focus {
     justify-self: left;
     text-align: center;
     padding: 10px;
-    background: url("./button.png") no-repeat center;
+    /*background: url("./button.png") no-repeat center;*/
     background-size: contain;
 }
 
