@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './DataInput.css'
 import InputMask from 'react-input-mask'
+import axios from "axios";
 
 class DataInput extends Component {
     constructor() {
@@ -45,7 +46,8 @@ class DataInput extends Component {
     };
 
     handleData = () => {
-        this.props.handleData({
+
+        const data = {
             name: this.state.name,
             bik: this.state.bik,
             numAccount: this.state.numAccount,
@@ -53,7 +55,18 @@ class DataInput extends Component {
             amount: this.state.amount,
             tel_number: this.state.telNum,
             email: this.state.email
-        });
+        };
+        console.log(data);
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/require-payment',
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
     };
 
     checkName(e){

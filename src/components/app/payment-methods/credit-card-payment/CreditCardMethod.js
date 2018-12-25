@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './CreditCardMethod.css'
 import card_system from "./card_systems.png";
 import InputMask from 'react-input-mask'
+import axios from 'axios';
+import qs from 'qs';
 
 class CreditCardMethod extends Component {
 
@@ -20,7 +22,7 @@ class CreditCardMethod extends Component {
             commentsValid: true,
             email: '',
             emailValid: false,
-            formValid: false
+            formValid: true
         };
 
         this.submitData = this.submitData.bind(this);
@@ -34,14 +36,27 @@ class CreditCardMethod extends Component {
     }
 
     submitData() {
-        this.props.handleData({
+        const data = {
             cardNumber: this.state.cardNumber,
             expireDate: this.state.expireDate,
             cvc: this.state.cvc,
             amount: this.state.amount,
             comments: this.state.comments,
-            email: this.state.email
-        });
+            email: this.state.email,
+            notSafe: '0'
+        };
+        // console.log(data);
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/card-payment',
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            })
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+
     }
     checkCardNumber(e) {
         const num = e.target.value;

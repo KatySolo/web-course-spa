@@ -1,0 +1,43 @@
+.resultTable
+{
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.admin-panel {
+    display: block;
+}
+
+.admin-container {
+    height: fit-content;
+}
+.admin-nav {
+    width: 17%;
+    margin: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-span {
+    border-radius: 10px ;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 5px;
+}
+
+a {
+    color: black;
+}
+
+a:hover
+{
+    color: red;
+}
+
+.admin-panel > div,
+.admin-panel > button{
+    margin: 10px 5px;
+}
