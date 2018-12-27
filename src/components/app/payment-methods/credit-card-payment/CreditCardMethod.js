@@ -3,7 +3,6 @@ import './CreditCardMethod.css'
 import card_system from "./card_systems.png";
 import InputMask from 'react-input-mask'
 import axios from 'axios';
-import qs from 'qs';
 
 class CreditCardMethod extends Component {
 
@@ -22,7 +21,7 @@ class CreditCardMethod extends Component {
             commentsValid: true,
             email: '',
             emailValid: false,
-            formValid: true
+            formValid: false
         };
 
         this.submitData = this.submitData.bind(this);
@@ -45,7 +44,6 @@ class CreditCardMethod extends Component {
             email: this.state.email,
             notSafe: '0'
         };
-        // console.log(data);
         axios({
             method: 'post',
             url: 'http://localhost:5000/card-payment',
@@ -68,7 +66,7 @@ class CreditCardMethod extends Component {
 
     checkExpireDate(e) {
         const date = e.target.value;
-        (date.match(/^(0[1-9]|1[0-2])\/?|1[8-9]{1}|[2-9]{1}[0-9]{1}$/)) ?
+        (date.match(/^(0[1-9]|1[0-2])\/(1[8-9]|2[0-9]|3[0-5])$/)) ?
             this.setState({expireDateValid: true},() => this.validateForm()) :
             this.setState({expireDateValid: false},() => this.validateForm());
     }

@@ -24,17 +24,17 @@ class Navigation extends Component
             <div className="navigation">
                 <div className="actions-labels-panel">
                     <label onClick={() => this.setState({checked: 'show'})}>
-                        <NavLink to="/card" className="pay-link link">Заплатить</NavLink>
+                        <NavLink to="/main/card" className="pay-link link">Заплатить</NavLink>
                     </label>
                     <label onClick={() => this.setState({checked: 'hide'})}>
-                        <NavLink to="/require" className="require-link link">Запросить платеж</NavLink>
+                        <NavLink to="/main/require" className="require-link link">Запросить платеж</NavLink>
                     </label>
                 </div>
                 {this.state.checked === 'show' ? <div className="payment-methods-panel">
-                    <NavLink to="/card" className="all-cards-link pay-links link">
+                    <NavLink to="/main/card" className="all-cards-link pay-links link">
                         <img src={card} alt="card" className="card-ico"/>С карты любого банка
                     </NavLink>
-                    <NavLink to="/all-banks" className="my-card-link pay-links link">
+                    <NavLink to="/main/all-banks" className="my-card-link pay-links link">
                         <img src={bank} alt="bank" className="bank-ico"/>Из своего интернет-банка
                     </NavLink>
                 </div>

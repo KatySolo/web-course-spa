@@ -19,9 +19,10 @@ class PaymentWindow extends Component {
                     <Navigation/>
                     <div className="payments-methods">
                         <Switch>
-                            <Route path="/card" render={() => <MyCard handleData = {this.handleData} />}/>
-                            <Route path="/all-banks" render={() => <AllBanks handleData = {this.handleData} />}/>
-                            <Route path="/require" render={() => <Require handleData = {this.handleData} />}/>
+                            <Route exact path="/" render={() => <MyCard handleData = {this.handleData} />}/>
+                            <Route path="/main/card" render={() => <MyCard handleData = {this.handleData} />}/>
+                            <Route path="/main/all-banks" render={() => <AllBanks handleData = {this.handleData} />}/>
+                            <Route path="/main/require" render={() => <Require handleData = {this.handleData} />}/>
                         </Switch>
                     </div>
                 </div>

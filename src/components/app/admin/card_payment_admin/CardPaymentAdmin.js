@@ -20,7 +20,6 @@ class CardPaymentAdmin extends Component {
     }
 
     getCardPayments() {
-        // console.log (this.state.field, this.state.sort);
         axios.get("http://localhost:5000/card-payment", {
             params: {
                 sort: this.state.sort,
@@ -28,17 +27,14 @@ class CardPaymentAdmin extends Component {
                 filter: (this.state.filter) ? this.state.filter : ''
             }
         })
-            .then(res => {
-                console.log(res);
-                this.setState({cardPayments: res.data}, ()=>{})
-            })
+            .then(res => this.setState({cardPayments: res.data}, ()=>{}))
             .catch(er => console.log(er))
     }
 
     setFiledSorting(e) {
         this.setState({
             field: e.target.value
-        }, () => console.log(this.state.field));
+        }, () => {});
     }
 
     setFilteringWords(e) {
@@ -105,7 +101,7 @@ class CardPaymentAdmin extends Component {
                             <td>Trust</td>
                         </tr>
                         {this.state.cardPayments.map((i, index) =>
-                            <tr className={(this.state.cardPayments[index].notSafe !== '0') ? "not-safe" : "safe"}>
+                            <tr className={(this.state.cardPayments[index].notSafe !== 0) ? "not-safe" : "safe"}>
                                 <td>{i[Object.keys(i)[6]]}</td>
                                 <td>{i[Object.keys(i)[0]]}</td>
                                 <td>{i[Object.keys(i)[1]]}</td>
@@ -113,12 +109,12 @@ class CardPaymentAdmin extends Component {
                                 <td>{i[Object.keys(i)[3]]}</td>
                                 <td>{i[Object.keys(i)[2]]}</td>
                                 <td>{i[Object.keys(i)[4]]}</td>
-                                <td>{i[Object.keys(i)[7]]}</td>
+                                <td>{(i[Object.keys(i)[7]] === 0) ? 'Yes' : 'No'}</td>
 
                                 {/*todo check where order mutation is*/}
 
                                 <td><button onClick={(e) => this.sendPatch(e, i[Object.keys(i)[6]])}>
-                                    Очень плохой платеж
+                                    {(i[Object.keys(i)[7]] === 0) ? 'Очень плохой платеж' : 'Отмена'}
                                 </button></td>
                             </tr>
                         )}

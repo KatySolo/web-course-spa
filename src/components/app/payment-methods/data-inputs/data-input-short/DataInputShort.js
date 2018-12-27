@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './DataInputShort.css'
+import axios from 'axios'
 
 class DataInputShort extends Component {
     constructor()
@@ -32,13 +33,40 @@ class DataInputShort extends Component {
     }
 
     submitData() {
-        this.props.handleData({
+        const data = {
             name: this.state.name,
             bik: this.state.bik,
             numAccount: this.state.num_account,
             nds: this.state.nds,
-            amount: this.state.amount
-        });
+            amount: this.state.amount,
+        };
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/create-payment',
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                axios({
+                    url: 'http://localhost:5000/create-payment',
+                    method: 'get',
+                    params: {
+                        name: res.data
+                    },
+                    responseType: 'blob',
+                })
+                    .then((response) => {
+                        const url = URL.createObjectURL(response.data);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'payments';
+                        a.click();
+                    })
+                    .catch(err => console.log(err))
+            })
+            .catch(error => console.log(error))
     }
 
     checkName(e){
@@ -95,10 +123,10 @@ class DataInputShort extends Component {
 
                     <span className="number-label payment-label">Номер счета</span>
                     <div className="number-input-comp">
-                        <input type="text" className="number-input"
+                        <input type="text" className="number-input" maxLength="20"
                                value={this.state.num_account} onChange={
                             (e) => {
-                                this.setState({numAccount: e.target.value});
+                                this.setState({num_account: e.target.value});
                                 this.props.cleaningCallback()
                             }}/>
                         {/*todo check if its num of account*/}

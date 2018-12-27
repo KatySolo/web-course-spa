@@ -51,7 +51,7 @@ class DataInput extends Component {
             name: this.state.name,
             bik: this.state.bik,
             numAccount: this.state.numAccount,
-            nds: this.state.bik,
+            nds: this.state.nds,
             amount: this.state.amount,
             tel_number: this.state.telNum,
             email: this.state.email
@@ -101,9 +101,9 @@ class DataInput extends Component {
             this.setState({numberValid: false}, () => {this.validateForm()})
     }
 
-    checkEmail(e){
-        console.log(e.target.value);
-    }
+    // checkEmail(e){
+    //     console.log(e.target.value);
+    // }
     // checkEmail(e) {
     //     console.log(e.target.value);
     //     (e.target.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) ?
@@ -122,7 +122,7 @@ class DataInput extends Component {
         // console.log(this.state.bikValid);
         // console.log(this.state.numAccountValid);
         // console.log(this.state.amountValid);
-        console.log(this.state.emailValid);
+        // console.log(this.state.emailValid);
         // console.log(this.state.numberValid);
     }
 

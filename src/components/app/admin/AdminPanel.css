@@ -16,7 +16,7 @@ td {
     height: fit-content;
 }
 .admin-nav {
-    width: 17%;
+    width: 25%;
     margin: 5px 5px;
     display: flex;
     justify-content: space-between;
@@ -40,4 +40,11 @@ a:hover
 .admin-panel > div,
 .admin-panel > button{
     margin: 10px 5px;
+}
+
+.nav-logout {
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid black;
+    font-size: 15px;
 }

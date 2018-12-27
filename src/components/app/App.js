@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import ClientInfo from './payer-credentials/PayerCredentials'
-import PaymentsWin from './payment-methods/PaymentWindow'
-import CompanyInfo from './company-info/CompanyInfo'
 import {BrowserRouter, Route} from "react-router-dom";
 import AdminPanel from './admin/AdminPanel'
 import UserPanel from './user/User'
+import Login from '../../auth/login/Login'
 
 
 class App extends Component {
@@ -13,11 +11,10 @@ class App extends Component {
     return (
         <BrowserRouter>
             <div>
-                <Route path='/main' component={UserPanel}/>
+                <Route exact path="/" component={UserPanel} />
+                <Route path='/main' component={UserPanel} />
+                <Route path='/login' component={Login} />
                 <Route path="/admin" component={AdminPanel} />
-                {/*<ClientInfo/>*/}
-                {/*<PaymentsWin/>*/}
-                {/*<CompanyInfo/>*/}
             </div>
         </BrowserRouter>
     );

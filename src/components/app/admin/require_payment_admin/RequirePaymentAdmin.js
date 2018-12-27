@@ -8,7 +8,7 @@ class RequirePaymentAdmin extends Component{
         this.state = {
             cardPayments: [],
             requiredPayments: [],
-            sort: 'acs',
+            sort: 'asc',
             field: 'no',
             filter: ''
         };
@@ -26,8 +26,7 @@ class RequirePaymentAdmin extends Component{
             }
         })
             .then(res => {
-                console.log(res);
-                this.setState({requiredPayments: res.data}, ()=>{console.log(this.state.requiredPayments)})
+                this.setState({requiredPayments: res.data}, ()=>{})
             })
             .catch(er => console.log(er))
     }
@@ -35,7 +34,7 @@ class RequirePaymentAdmin extends Component{
     setFiledSorting(e) {
         this.setState({
             field: e.target.value
-        }, () => console.log(this.state.field));
+        }, () => {});
     }
 
     setFilteringWords(e) {
@@ -48,28 +47,29 @@ class RequirePaymentAdmin extends Component{
             <div className="admin-panel">
                 <div>
                 <lable>
-                    <input type="radio" name="sort_option" value="decs"
-                              checked={this.state.sort === 'decs'}
-                              onClick={() => this.setState({sort: 'decs'})}/>
-                    DECS
+                    <input type="radio" name="sort_option" value="desc"
+                              checked={this.state.sort === 'desc'}
+                              onClick={() => this.setState({sort: 'desc'})}/>
+                    DESC
                 </lable>
 
-                <label><input type="radio" name="sort_option" value="acs"
-                              checked={this.state.sort === 'acs'}
-                              onClick={() => this.setState({sort: 'acs'})}/>
-                    ACS
+                <label><input type="radio" name="sort_option" value="asc"
+                              checked={this.state.sort === 'asc'}
+                              onClick={() => this.setState({sort: 'asc'})}/>
+                    ASC
                 </label>
                 </div>
                 <div>
                 <span>Choose sorting field</span>
                 <select value={this.state.field} onChange={this.setFiledSorting}>
                     <option value="no">No</option>
-                    <option value="card_num">Card Number</option>
+                    <option value="name">Name</option>
+                    <option value="bik">BIK</option>
+                    <option value="account_num">Account Number</option>
+                    <option value="nds">NDS</option>
                     <option value="amount">Amount</option>
-                    <option value="comments">Comments</option>
-                    <option value="cvc">CVC</option>
+                    <option value="tel_number">Number</option>
                     <option value="email">Email</option>
-                    <option value="expire_date">Expire Date</option>
                 </select>
                 </div>
                 <div>
@@ -81,9 +81,10 @@ class RequirePaymentAdmin extends Component{
                     <table className="resultTable">
                         <tbody>
                         <tr>
+                            <td>No.</td>
                             <td>Name</td>
                             <td>BIK</td>
-                            <td>Bank Number</td>
+                            <td>Account Number</td>
                             <td>NDS</td>
                             <td>Amount</td>
                             <td>Number</td>
@@ -91,9 +92,17 @@ class RequirePaymentAdmin extends Component{
                         </tr>
                         {this.state.requiredPayments.map((i) =>
                             <tr>
-                                {Object.keys(i).map((j) =>
-                                    <td>{i[j]}</td>
-                                )}
+                                <td>{i[Object.keys(i)[4]]}</td>
+                                <td>{i[Object.keys(i)[5]]}</td>
+                                <td>{i[Object.keys(i)[2]]}</td>
+                                <td>{i[Object.keys(i)[0]]}</td>
+                                <td>{i[Object.keys(i)[6]]}</td>
+                                <td>{i[Object.keys(i)[1]]}</td>
+                                <td>{i[Object.keys(i)[7]]}</td>
+                                <td>{i[Object.keys(i)[3]]}</td>
+                                {/*{Object.keys(i).map((j) =>*/}
+                                    {/*<td>{i[j]}</td>*/}
+                                {/*)}*/}
                             </tr>
                         )}
                         </tbody>
